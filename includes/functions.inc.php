@@ -105,8 +105,9 @@
     }
 
     function LoginUser($conn, $username, $pwd){
-        $uidExists = uidExists($conn, $username, $email);
+        $uidExists = uidExists($conn, $username, $username);
 
+        // checks if username exists in database
         if($uidExists === false){
             header("location: ../login.php?error=detailsdoesnotexists");
             exit();
@@ -116,16 +117,17 @@
         $pwdHashed = $uidExists["usersPwd"];
         $checkPwd = password_verify($pwd, $pwdHashed);
 
+        // checks if login info is correct
         if($checkPwd === false){
-            header("location: login.php?error=wronglogin");
-            exit();]
+            header("location: ../login.php?error=wronglogin");
+            exit();
         }
         elseif($checkPwd === true){
             session_start();
             $_SESSION["userid"] = $uidExists["usersId"];
             $_SESSION["useruid"] = $uidExists["usersUid"];
 
-            header("location: ../login.php");
+            header("location: ../index.php");
             exit();
         }
     }

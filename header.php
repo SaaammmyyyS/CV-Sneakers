@@ -13,7 +13,7 @@
 
     <div class="wrapper-header">
         <div class="site-identity">
-            <h1><a href="#">Site Name</a></h1>
+            <h1><a href="#">CV Sneakers</a></h1>
         </div>  
         <nav class="site-navigation">
             <ul class="nav">
@@ -22,9 +22,10 @@
             <li><a href="">Contact</a></li>
 
             <?php
-                if(isset($_SESSION["usersuid"])){
+                if(isset($_SESSION["useruid"])){
+                    echo '<li><a href="profile.php">' . $_SESSION["useruid"] . '</a></li>';
                     echo '<li><a href="profile.php">Profile Page</a></li>';
-                    echo '<li><a href="logout.php">Log out</a></li>';
+                    echo '<li><a href="includes/logout.inc.php">Log out</a></li>';
                 }
                 else{
                     echo '<li><a href="signup.php">Sign up</a></li>';
