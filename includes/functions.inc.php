@@ -84,7 +84,7 @@
 
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        mysqli_stmt_bind_param($stmt, "ssss", $username, $email, $username, $hashedPwd);
+        mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $username, $hashedPwd);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
         header("location: ../signup.php");
@@ -126,6 +126,7 @@
             session_start();
             $_SESSION["userid"] = $uidExists["usersId"];
             $_SESSION["useruid"] = $uidExists["usersUid"];
+            // $_SESSION["useremail"] = $uidExists["usersEmail"];
 
             header("location: ../index.php");
             exit();
