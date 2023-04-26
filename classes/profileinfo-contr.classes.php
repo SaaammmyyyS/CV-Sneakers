@@ -6,7 +6,7 @@
 
 
         public function __construct($userId, $userUid) {
-            $this->userid = $userid;
+            $this->userId = $userId;
             $this->userUid = $userUid;
             
         }
@@ -14,7 +14,7 @@
 
         public function defaultProfileInfo(){
             $profileAbout = "Tell people about yourself! Your interest, hobbies, or favorite TV show!";
-            $profileTitle = "Hi! I am " . $this->userUid;;
+            $profileTitle = "Hi! I am " . $this->userUid;
             $profileText = "Welcome to my profile page! Soon I'll be able to tell you more about myself, and what you can find on my profile page.";
 
             $this->setProfileInfo($profileAbout, $profileTitle, $profileText, $this->userId);

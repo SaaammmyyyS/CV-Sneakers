@@ -108,4 +108,10 @@
             }
             return $result;
         }
+
+        public function fetchUserId($uid){
+            $userId = $this->getUserId($uid);
+
+            return $userId[0]["users_id"];
+        }
     }

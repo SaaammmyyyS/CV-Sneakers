@@ -1,7 +1,7 @@
 <?php 
-    if (isset($_POST["submit"])){
-        $uid = $_POST["uid"];
-        $pwd = $_POST["pwd"];
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $uid = htmlspecialchars($_POST["uid"], ENT_QUOTES, 'UTF-8');
+        $pwd = htmlspecialchars($_POST["pwd"], ENT_QUOTES, 'UTF-8');
 
         include "../classes/dbh.classes.php";
         include "../classes/login.classes.php";
