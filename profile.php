@@ -3,7 +3,6 @@
 
     include "classes/dbh.classes.php";
     include "classes/profileinfo.classes.php";
-    include "classes/profileinfo-contr.classes.php";
     include "classes/profileinfo-view.classes.php";
 
     $profileInfo = new ProfileInfoView();
@@ -14,14 +13,13 @@
 <body>
 
     <div>
-        <h1>This is an example!</h1>
-    </div>
-    
-    <div>
+        
         <section>
+            <a href="profilesettings.php">Profile Settings</a>
+
             <p>
                 <?php
-                    echo $_SESSION["useruid"];
+                    echo "hello " . $_SESSION["useruid"];
                 ?>
             </p>
             <p>

@@ -12,27 +12,30 @@
     
     <title>Document</title>
 
+    <header>
+        <img class="logo" src="img/logo.png" alt="">
+        <nav>
+            <ul class="nav_links">
+                <li><a href="index.php">New Releases</a></li> 
+                <li><a href="">Men</a></li> 
+                <li><a href="">Women</a></li>
+                <li><a href="">Kids</a></li>
+                <li><a href="">Sale</a></li>
+                <li><a href="">Collections</a></li>
+            </ul>
 
-    <div class="wrapper-header">
-        <div class="site-identity">
-            <h1><a href="#">CV Sneakers</a></h1>
-        </div>  
-        <nav class="site-navigation">
-            <ul class="nav">
-            <li><a href="index.php">Home</a></li> 
-            <li><a href="">News</a></li> 
-            <li><a href="">Contact</a></li>
-
+        </nav>
+        <ul class="nav_links">
             <?php
                 if(isset($_SESSION["userid"])){
                     echo '<li><a href="profile.php">' . $_SESSION["useruid"] . '</a></li>';
-                    echo '<li><a href="includes/logout.inc.php">LOGOUT</a></li>';
+                    echo '<li><a href="includes/logout.inc.php">Logout</a></li>';
                 }
 
                 else{
-                    echo '<li><a href="signup.php">SIGN UP</a></li>';
-                    echo '<li><a href="login.php">LOGIN</a></li>';
+                    echo '<li><a href="signup.php">Sign up</a></li>';
+                    echo '<li><a href="login.php">Login</a></li>';
                 }
             ?>
-        </nav>
-    </div>
+        </ul>
+    </header>
